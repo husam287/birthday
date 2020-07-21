@@ -18,11 +18,11 @@ export class VideoComponent implements OnInit ,OnDestroy{
   subs1:Subscription;
 
   gift=false;
-  timeToDisplayGift:number=63;
+  //timeToDisplayGift:number=63;
 
 
   @ViewChild('video') video:ElementRef;
-  @ViewChild('giftDiv') giftDiv:ElementRef;
+  //@ViewChild('giftDiv') giftDiv:ElementRef;
   constructor(private activeRouter:ActivatedRoute,private videoManager:VideoManagerService) { }
 
   ngOnInit(): void {
@@ -52,20 +52,20 @@ export class VideoComponent implements OnInit ,OnDestroy{
     this.videoManager.played.next(false);
 
   }
-  onChangeTime(){
-    if(this.displayedVideoId===0){
-      if(this.video.nativeElement.currentTime>=this.timeToDisplayGift && this.video.nativeElement.currentTime<this.timeToDisplayGift+0.25){
-        this.gift=true;
-        this.video.nativeElement.pause();
-        setTimeout(() => {
-         // console.log(this.giftDiv.nativeElement)
-          this.giftDiv.nativeElement.scrollIntoView({block:'end' ,behavior:'smooth'})
+  // onChangeTime(){
+  //   if(this.displayedVideoId===0){
+  //     if(this.video.nativeElement.currentTime>=this.timeToDisplayGift && this.video.nativeElement.currentTime<this.timeToDisplayGift+0.25){
+  //       this.gift=true;
+  //       this.video.nativeElement.pause();
+  //       setTimeout(() => {
+  //        // console.log(this.giftDiv.nativeElement)
+  //         this.giftDiv.nativeElement.scrollIntoView({block:'end' ,behavior:'smooth'})
           
-        }, 300);
+  //       }, 300);
 
-      }
-    }
-  }
+  //     }
+  //   }
+  // }
 
 
 

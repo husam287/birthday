@@ -10,17 +10,12 @@
     class="video-border"
     (play)="onPlay()"
     (pause)="onPause()"
-    (timeupdate)="onChangeTime()"
     [src]="displayedVideo" 
     controls 
     width="100%" 
     autoplay>
     </video>
-    <div 
-    #giftDiv
-    *ngIf="gift&&(displayedVideoId===0)">
-        <a href="https://husam287.github.io/memosland/" target="_blank"><i class="fas fa-gift fa-7x text-danger"></i></a>
-    </div>
+    <!--(timeupdate)="onChangeTime()"-->
 </div>
 
 
